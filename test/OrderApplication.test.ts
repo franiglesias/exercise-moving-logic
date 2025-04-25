@@ -2,6 +2,7 @@ import {beforeEach, describe, expect, test} from 'vitest'
 import {OrderApplication} from '../src/OrderApplication'
 import {OrderService} from '../src/OrderService'
 import {ProductRepository} from '../src/ProductRepository'
+import {Product} from '../src/Product'
 
 describe('OrderApplication', () => {
     let orderApplication: OrderApplication
@@ -9,7 +10,12 @@ describe('OrderApplication', () => {
     beforeEach(() => {
         orderApplication = new OrderApplication(
             new OrderService(
-                new ProductRepository(),
+                new ProductRepository(
+                    {
+                        P001: new Product('P001', 19.99, 100),
+                        P002: new Product('P002', 29.99, 50),
+                    },
+                ),
             ),
         )
     })

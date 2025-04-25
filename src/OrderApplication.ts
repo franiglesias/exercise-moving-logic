@@ -1,5 +1,12 @@
 import {OrderService} from './OrderService'
 
+/*
+* OrderApplication is a wrapper to represent a real application,
+* so the tests can be end-to-end, and hopefully you won't need to modify them.
+*
+* Feel free to modify the code inside OrderApplication methods, but don't touch the API
+*
+* */
 export class OrderApplication {
     private readonly orderService: OrderService
 
